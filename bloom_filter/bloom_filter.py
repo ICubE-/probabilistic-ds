@@ -7,12 +7,12 @@ class BloomFilter:
         # Calculate the filter size and number of hash functions
         self.size = self._get_size(num_items, false_positive_rate)
         self.num_hashes = self._get_num_hashes(self.size, num_items)
-
+        # Initialize bit array
         self.bit_array = bitarray.bitarray(self.size)
         self.bit_array.setall(0)
 
     def _get_size(self, num_items, false_positive_rate):
-        # m = -(n * log(p)) / (log(2)^2)
+        # m = - (n * log(p)) / log(2 ^ log(2))
         return int(-(num_items * math.log(false_positive_rate)) / math.log(2 ** math.log(2)))
 
     def _get_num_hashes(self, size, num_items):
