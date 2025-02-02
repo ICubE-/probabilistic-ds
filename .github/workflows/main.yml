@@ -19,6 +19,7 @@ jobs:
         run: |
           pip install kaggle
           kaggle datasets download wcukierski/enron-email-dataset -f emails.csv -w
+          ls
       - name: Run the code
         run: |
           cd bloom_filter
