@@ -16,4 +16,6 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip bitarray
       - name: Run the code
-        run: python bloom_filter/bloom_filter.py
+        run: |
+          cd bloom_filter
+          python bloom_filter.py
