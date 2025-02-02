@@ -20,6 +20,21 @@ jobs:
           pip install kaggle
           kaggle datasets download wcukierski/enron-email-dataset -f emails.csv -w
           unzip emails.csv.zip
-          ls
       - name: Run the code
         run: python bloom_filter/bloom_filter.py
+
+  test-hyperloglog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Download the test file
+        run: |
+          pip install kaggle
+          kaggle datasets download vijayuv/onlineretail -f OnlineRetail.csv -w
+          unzip OnlineRetail.csv.zip
+      - name: Run the code
+        run: python hyperloglog/hyperloglog.py
