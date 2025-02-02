@@ -17,7 +17,7 @@ jobs:
         run: python -m pip install --upgrade pip bitarray
       - name: Download the test file
         run: |
-          apt-get -y install kaggle
+          sudo apt-get -y install kaggle
           kaggle datasets download wcukierski/enron-email-dataset -f emails.csv -w
       - name: Run the code
         run: |
