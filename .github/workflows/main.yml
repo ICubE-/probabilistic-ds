@@ -22,6 +22,4 @@ jobs:
           unzip emails.csv.zip
           ls
       - name: Run the code
-        run: |
-          cd bloom_filter
-          python bloom_filter.py
+        run: python bloom_filter/bloom_filter.py
