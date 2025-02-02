@@ -19,6 +19,7 @@ jobs:
         run: |
           pip install kaggle
           kaggle datasets download wcukierski/enron-email-dataset -f emails.csv -w
+          unzip emails.csv.zip
           ls
       - name: Run the code
         run: |
